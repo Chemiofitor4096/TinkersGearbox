@@ -1,0 +1,36 @@
+modLoader="javafml" #mandatory
+loaderVersion="[47,)" #mandatory
+license="MIT"
+[[mods]] #mandatory
+modId="tgearbox" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Tinkers' Gearbox" #mandatory
+logoFile="icon.png"
+authors="Chemiofitor"
+description='''
+
+'''
+[[dependencies.tgearbox]]
+modId="forge"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.tgearbox]]
+modId="minecraft"
+mandatory=true
+versionRange="[1.20.1,1.21)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.tgearbox]]
+modId="create"
+mandatory=true
+versionRange="[6.0.0,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.tgearbox]]
+modId="tconstruct"
+mandatory=true
+versionRange="[3.10.1.0,)"
+ordering="NONE"
+side="BOTH"
