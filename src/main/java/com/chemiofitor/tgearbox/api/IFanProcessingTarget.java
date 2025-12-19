@@ -1,28 +1,28 @@
 package com.chemiofitor.tgearbox.api;
 
+import com.simibubi.create.content.kinetics.fan.processing.AllFanProcessingTypes;
 import com.simibubi.create.content.kinetics.fan.processing.FanProcessingType;
 
 /**
- * API interface for block entities that can be processed by Create mod's fan air currents.
- * Defines the core interaction methods for fan airflow processing logic.
+ * 用于可被Create模组风扇气流处理的方块实体的API接口
+ * 定义了风扇气流处理逻辑的核心交互方法
  */
 public interface IFanProcessingTarget {
-
     /**
-     * Processes the target with fan airflow of a specific type and speed.
-     * Called when the fan's air current affects this block entity.
+     * 用特定类型和速度的风扇气流处理目标
+     * 当风扇气流影响到该方块实体时调用
      *
-     * @param segmentType Type of fan processing (e.g., push, pull, effect)
-     * @param speed       Speed of the fan generating the air current (0.0f to max fan speed)
+     * @param segmentType 风扇处理类型（具体查看：{@linkplain AllFanProcessingTypes}）
+     * @param speed 生成气流的风扇速度（0.0f至最大风扇速度）
      */
     void process(FanProcessingType segmentType, float speed);
 
     /**
-     * Checks if the target can be processed by the specified fan processing type.
-     * Prevents invalid processing interactions (e.g., a target that only accepts "pull" airflow).
+     * 检查目标是否可被指定类型的风扇处理
+     * 用于阻止无效的处理交互
      *
-     * @param segmentType Type of fan processing to check
-     * @return True if the target supports this processing type, false otherwise
+     * @param segmentType 要检查的风扇处理类型
+     * @return 若目标支持该处理类型则返回true，否则返回false
      */
     boolean canProcess(FanProcessingType segmentType);
 }

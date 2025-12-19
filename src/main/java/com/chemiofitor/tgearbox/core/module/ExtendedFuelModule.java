@@ -10,27 +10,21 @@ import slimeknights.mantle.block.entity.MantleBlockEntity;
 import slimeknights.tconstruct.smeltery.block.entity.module.SolidFuelModule;
 
 /**
- * Extended fuel module that supports custom Tinker heat sources (both blocks and block entities).
- * Extends the base SolidFuelModule to integrate additional heating mechanics.
+ * 扩展燃料模块，支持自定义热源
+ * 继承自基础SolidFuelModule，整合额外的加热机制
  */
 public class ExtendedFuelModule extends SolidFuelModule {
-    // Position of the fuel/heat source block in the world
     private final BlockPos fuelPos;
 
-    /**
-     * Constructs an ExtendedFuelModule with a parent block entity and fuel position.
-     * @param parent The parent MantleBlockEntity this module belongs to
-     * @param fuelPos The position of the fuel/heat source in the world
-     */
     public ExtendedFuelModule(MantleBlockEntity parent, BlockPos fuelPos) {
         super(parent, fuelPos);
         this.fuelPos = fuelPos;
     }
 
     /**
-     * Checks if there is an active heat source at the fuel position.
-     * Prioritizes block entities first, then checks block types.
-     * @return True if an active heat source is found, false otherwise
+     * 检查燃料位置是否存在活跃的热源
+     * 优先检查方块实体，再检查方块类型
+     * @return 若存在活跃热源则返回true，否则返回false
      */
     public boolean isHeating() {
         Level level = getLevel();
@@ -49,9 +43,9 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Gets the temperature from the active heat source at the fuel position.
-     * Prioritizes block entities first, then checks block types.
-     * @return Temperature value from the heat source, or 0 if no active source
+     * 从燃料位置的活跃热源获取温度
+     * 优先检查方块实体，再检查方块类型
+     * @return 热源的温度值，若无活跃热源则返回0
      */
     private int getHeatSourceTemperature() {
         Level level = getLevel();
@@ -70,9 +64,9 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Gets the heating rate from the active heat source at the fuel position.
-     * Prioritizes block entities first, then checks block types.
-     * @return Heating rate value from the heat source, or 0 if no active source
+     * 从燃料位置的活跃热源获取加热速率
+     * 优先检查方块实体，再检查方块类型
+     * @return 热源的加热速率值，若无活跃热源则返回0
      */
     private int getHeatSourceRate() {
         Level level = getLevel();
@@ -91,10 +85,10 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Finds the fuel temperature, using custom heat sources if active.
-     * Falls back to the parent class implementation if no active heat source.
-     * @param consume Unused in this implementation (inherited parameter)
-     * @return Temperature from the active heat source or parent fuel system
+     * 查找燃料温度，若存在活跃自定义热源则使用其温度
+     * 若无活跃热源则回退到父类实现
+     * @param consume 本实现中未使用（继承的参数）
+     * @return 活跃热源的温度或父类燃料系统的温度
      */
     @Override
     public int findFuel(boolean consume) {
@@ -102,9 +96,9 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Gets the current temperature, using custom heat sources if active.
-     * Falls back to the parent class implementation if no active heat source.
-     * @return Current temperature value
+     * 获取当前温度，若存在活跃自定义热源则使用其温度
+     * 若无活跃热源则回退到父类实现
+     * @return 当前温度值
      */
     @Override
     public int getTemperature() {
@@ -112,9 +106,9 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Gets the current heating rate, using custom heat sources if active.
-     * Falls back to the parent class implementation if no active heat source.
-     * @return Current heating rate value
+     * 获取当前加热速率，若存在活跃自定义热源则使用其速率
+     * 若无活跃热源则回退到父类实现
+     * @return 当前加热速率值
      */
     @Override
     public int getRate() {
@@ -122,8 +116,8 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Checks if there is available fuel/heat, including active custom heat sources.
-     * @return True if there's an active heat source or fuel in the parent system
+     * 检查是否存在可用燃料/热量，包括活跃的自定义热源
+     * @return 若存在活跃热源或父类系统中有燃料则返回true
      */
     @Override
     public boolean hasFuel() {
@@ -131,8 +125,8 @@ public class ExtendedFuelModule extends SolidFuelModule {
     }
 
     /**
-     * Decreases fuel amount, but only if no active custom heat source is present.
-     * @param amount The amount to decrease the fuel by
+     * 减少燃料量，但仅在无活跃自定义热源时执行
+     * @param amount 要减少的燃料量
      */
     @Override
     public void decreaseFuel(int amount) {

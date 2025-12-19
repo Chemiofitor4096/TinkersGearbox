@@ -23,8 +23,9 @@ dependencies {
 }
 ```
 你可以在[KTTMaven](https://maven.kessokuteatime.work/#/releases/com/chemiofitor/tgearbox)找到最新版本的TGearbox，
+除此之外，推荐使用JarInJar，具体使用示例可参考[匠械](https://github.com/HO-Artisan/TinkersGears)。
 ### 使用API
-已提供Javadoc，具体使用示例可参考该库的源码注释和[匠械](https://github.com/HO-Artisan/TinkersGears)。
+已提供Javadoc，具体使用示例可参考[匠械](https://github.com/HO-Artisan/TinkersGears)。
 ## 许可证
 本项目采用 MIT 许可证 开源，详情请查看 [LICENSE](LICENSE) 文件。
 ## 致谢

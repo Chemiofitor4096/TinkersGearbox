@@ -1,8 +1,8 @@
 package com.chemiofitor.tgearbox.api;
 
 /**
- * Base interface for all heat sources in Tinker's Gearbox.
- * Serves as a marker interface to identify various heat source implementations.
+ * 所有热源的基础接口
+ * 作为标记接口，用于识别各种热源实现类
  */
 public interface ITinkerHeatSource {
 

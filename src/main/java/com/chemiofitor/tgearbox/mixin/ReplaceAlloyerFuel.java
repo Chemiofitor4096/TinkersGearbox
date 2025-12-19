@@ -10,6 +10,10 @@ import slimeknights.mantle.block.entity.MantleBlockEntity;
 import slimeknights.tconstruct.smeltery.block.entity.controller.AlloyerBlockEntity;
 import slimeknights.tconstruct.smeltery.block.entity.module.SolidFuelModule;
 
+/**
+ * 对TiC的AlloyerBlockEntity（合金炉方块实体）进行Mixin
+ * 用于将默认燃料模块替换为自定义的ExtendedFuelModule
+ */
 @Mixin(AlloyerBlockEntity.class)
 public class ReplaceAlloyerFuel implements IHaveGoggleInformation {
 

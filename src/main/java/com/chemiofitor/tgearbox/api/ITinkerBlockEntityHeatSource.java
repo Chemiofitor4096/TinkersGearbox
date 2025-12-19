@@ -1,27 +1,26 @@
 package com.chemiofitor.tgearbox.api;
 
 /**
- * Interface representing a block entity that can act as a heat source in Tinker's Gearbox.
- * Extends the base ITinkerHeatSource interface.
- * Unlike block-based heat sources, block entities typically hold their own world/position data.
+ * 表示可作为热源的方块实体的接口
+ * 与方块热源不同，方块实体通常自身持有世界/位置数据
  */
 public interface ITinkerBlockEntityHeatSource extends ITinkerHeatSource {
 
     /**
-     * Gets the temperature provided by this heat source block entity.
-     * @return The temperature value of the heat source
+     * 获取该热源方块实体提供的温度
+     * @return 热源的温度值
      */
     int getTemperature();
 
     /**
-     * Gets the heating rate of this heat source block entity.
-     * @return The heating rate value
+     * 获取该热源方块实体的加热速率
+     * @return 加热速率值
      */
     int getRate();
 
     /**
-     * Checks if this block entity is currently active as a heat source.
-     * @return True if the block entity is actively heating, false otherwise
+     * 检查该方块实体当前是否作为热源活跃
+     * @return 若方块实体正在加热则返回true，否则返回false
      */
     boolean isHeating();
 }

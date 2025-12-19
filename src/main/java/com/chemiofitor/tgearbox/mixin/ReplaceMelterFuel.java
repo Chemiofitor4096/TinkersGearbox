@@ -9,6 +9,10 @@ import slimeknights.mantle.block.entity.MantleBlockEntity;
 import slimeknights.tconstruct.smeltery.block.entity.controller.MelterBlockEntity;
 import slimeknights.tconstruct.smeltery.block.entity.module.SolidFuelModule;
 
+/**
+ * 对TiC的MelterBlockEntity（冶炼炉炉方块实体实体）进行Mixin
+ * 用于将默认燃料模块替换为自定义的ExtendedFuelModule
+ */
 @Mixin(MelterBlockEntity.class)
 public class ReplaceMelterFuel {
 

@@ -15,6 +15,10 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+/**
+ * 对Create模组的AirCurrent类进行Mixin
+ * 用于扩展风扇气流对自定义方块实体的处理逻辑
+ */
 @Mixin(AirCurrent.class)
 public abstract class InjectAirCurrent {
 
