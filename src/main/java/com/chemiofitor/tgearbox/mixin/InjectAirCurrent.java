@@ -49,7 +49,8 @@ public abstract class InjectAirCurrent {
                 BlockPos pos = start.relative(direction, i);
                 BlockEntity blockEntity = world.getBlockEntity(pos);
                 if (blockEntity instanceof IFanProcessingTarget target)
-                    target.process(type, speed);
+                    if (target.canProcess(type))
+                        target.process(type, speed);
             }
         }
     }

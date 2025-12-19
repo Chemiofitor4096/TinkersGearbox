@@ -8,7 +8,7 @@ plugins {
 base {
     archivesName = "tgearbox"
     group = 'com.chemiofitor.tgearbox'
-    version = "${mod_version}-for-create-${create_version}"
+    version = "${mod_version}"
 }
 
 idea {
@@ -157,14 +157,21 @@ jar {
     }
 }
 
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier.set('sources')
+    from sourceSets.main.allJava
+    from sourceSets.main.resources
+}
+
 publishing {
     publications {
         mavenJava(MavenPublication) {
+            artifact jar
+            artifact sourcesJar
+
             groupId = "com.chemiofitor"
             artifactId = "tgearbox"
-            version = "1.0.0"
-
-            from components.java
+            version = "1.0"
 
             pom {
                 name = "Tinkers Gearbox"
@@ -196,3 +203,5 @@ publishing {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
+
+build.dependsOn sourcesJar

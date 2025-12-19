@@ -3,12 +3,11 @@ loaderVersion="[47,)" #mandatory
 license="MIT"
 [[mods]] #mandatory
 modId="tgearbox" #mandatory
-version="${file.jarVersion}" #mandatory
+version="1.0" #mandatory
 displayName="Tinkers' Gearbox" #mandatory
-logoFile="icon.png"
 authors="Chemiofitor"
 description='''
-
+A lib for the Create and the TiC
 '''
 [[dependencies.tgearbox]]
 modId="forge"
